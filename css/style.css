@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
+
+:root {
+    --color-accent: #3a3c42;
+    --color-background: #ffffff;
+    --color-primary: #9ccd62;
+    --color-secondary: #dfdeca;
+    --color-tertiary: #f7f8e2;
+    --font-size-h4: 24px;
+    --height-header: 90px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    transition: 1000ms all;
+}
+
+body {
+    background-color: var(--color-background);
+    color: white;
+    font-family: "Raleway", sans-serif;
+}
+
+footer {
+    align-items: center;
+    background-color: var(--color-secondary);
+    display: flex;
+    height: 97px;
+    justify-content: center;
+    margin-top: 74px;
+}
+
+header {
+    align-items: center;
+    background-color: var(--color-accent);
+    display: flex;
+    height: var(--height-header);
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.button-favorite {
+    align-items: center;
+    bottom: 16;
+    color: var(--color-primary);
+    display: flex;
+    right: 16;
+    position: absolute;
+    transition: 250ms all;
+}
+
+.button-favorite:active {
+    transform: scale(1.5);
+}
+
+.container > * {
+    flex: 1;
+    flex-basis: 100%;
+}
+
+.content {
+    margin: 45px auto;
+}
+
+.infobar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.jumbotron {
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: var(--height-header);
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 90%;
+}
+
+.nodecor-link {
+    text-decoration: none !important;
+}
+
+.recipe-container {
+    align-items: center;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    justify-content: center;
+    margin: 32px auto;
+    width: 90%;
+}
+
+.recipe-item {
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    height: 205px;
+    position: relative;
+    width: 250px;
+    transition: 250ms all;
+}
+
+.recipe-item:hover {
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-item img {
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+}
+
+#jumbotron-cover {
+    background-blend-mode: color;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url("/img/jumbotron.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: inherit;
+    height: 500px;
+    width: 100%;
+}
+
+#search {
+    margin: 45px auto;
+}
+
+#search-submit {
+    align-items: center;
+    background-color: var(--color-primary);
+    border: 0;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    margin-left: 15px;
+    max-width: 20%;
+    text-align: center;
+    width: 80px;
+}
+
+#search > form {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+}
+
+#search-input {
+    border: 1px solid var(--color-primary);
+    border-radius: 50px;
+    font-size: 18px;
+    height: 40px;
+    max-width: 70%;
+}
+
+#title-header {
+    color: var(--color-primary);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#title-jumbotron {
+    align-items: center;
+    color: var(--color-tertiary);
+    display: flex;
+    font-size: 50px;
+    font-weight: 700;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    width: 75%;
+}
+
+#title-footer {
+    color: var(--color-accent);
+    font-size: var(--font-size-h4);
+    font-weight: 700;
+}
+
+#title-result {
+    color: var(--color-primary);
+    font-size: var(--font-size-h4);
+    font-weight: 700;
+    text-align: center;
+}
+
+#title-recipe {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* 
+    ##Device = Tablets, Ipads
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (max-width: 1024px) {
+    :root {
+        --height-header: 80px;
+    }
+
+    #title-jumbotron {
+        font-size: 45px;
+    }
+}
+
+/*
+    ##Medium devices (tablets, 991px and below)
+*/
+@media (max-width: 991px) {
+    #jumbotron-cover {
+        height: 300px;
+    }
+
+    #title-jumbotron {
+        font-size: 40px;
+    }
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (max-width: 767px) {
+    header {
+        height: 80px;
+    }
+
+    .jumbotron {
+        width: 100%;
+    }
+
+    .recipe-container {
+        grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+        width: 100%;
+    }
+
+    .recipe-item {
+        height: 100%;
+        margin: auto;
+        max-width: 100%;
+        min-width: 90%;
+    }
+
+    #jumbotron-cover {
+        height: 250px;
+    }
+
+    #title-header {
+        font-size: 30px;
+    }
+
+    #title-jumbotron {
+        font-size: 34px;
+    }
+
+    #search > form {
+        width: 100%;
+    }
+
+    #search-submit {
+        margin-left: 4%;
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 347px to 479px
+  */
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-h4: 20px;
+    }
+
+    #jumbotron-cover {
+        height: 220px;
+    }
+
+    .recipe-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, auto));
+    }
+
+    #title-jumbotron {
+        font-size: 7.5vw;
+    }
+}
